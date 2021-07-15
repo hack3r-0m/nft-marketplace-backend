@@ -83,6 +83,7 @@ router.post(
             let balance = await web3.eth.getBalance(user.address);
             if (parseInt(balance) < parseInt(config.MINIMUM_BALANCE)) {
               await web3.eth.sendTransaction({
+                chainId: constants.MATIC_CHAIN_ID,
                 from: config.FROM_ADDRESS,
                 to: user.address,
                 value: config.DONATION_AMOUNT,
