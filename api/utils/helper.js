@@ -226,6 +226,7 @@ async function executeMetaTransaction(txDetails) {
   web3.eth.accounts.wallet.add(config.admin_private_key);
   let execution,
     txObj = {
+      chainId: constants.MATIC_CHAIN_ID,
       from: web3.eth.accounts.wallet[0].address,
       data,
       to: txDetails.contractAddress,
