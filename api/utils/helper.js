@@ -253,6 +253,7 @@ const calculateProtocolFee = (
 
 const providerEngine = () => {
   const mnemonicWallet = new MnemonicWalletSubprovider({
+    chainId: 80001,
     mnemonic: config.MNEMONIC,
     baseDerivationPath: constants.ZERO_EX.BASE_DERIVATION_PATH,
   });
